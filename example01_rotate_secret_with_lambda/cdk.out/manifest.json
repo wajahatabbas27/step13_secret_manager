@@ -1,0 +1,112 @@
+{
+  "version": "16.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "Example01RotateSecretWithLambdaStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "Example01RotateSecretWithLambdaStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "Example01RotateSecretWithLambdaStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "Example01RotateSecretWithLambdaStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b20788647935434b6c2ce64de4790357f3a0efa1aa822b31ee868e93bc643127.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "Example01RotateSecretWithLambdaStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "Example01RotateSecretWithLambdaStack.assets"
+      ],
+      "metadata": {
+        "/Example01RotateSecretWithLambdaStack/Secret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecretA720EF05"
+          }
+        ],
+        "/Example01RotateSecretWithLambdaStack/Secret/RotationSchedule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecretRotationSchedule49AED07D"
+          }
+        ],
+        "/Example01RotateSecretWithLambdaStack/Secret/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecretPolicy06C9821C"
+          }
+        ],
+        "/Example01RotateSecretWithLambdaStack/secretLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "secretLambdaServiceRole2D9EDD20"
+          }
+        ],
+        "/Example01RotateSecretWithLambdaStack/secretLambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "secretLambdaServiceRoleDefaultPolicy81E933D0"
+          }
+        ],
+        "/Example01RotateSecretWithLambdaStack/secretLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "secretLambda0B818386"
+          }
+        ],
+        "/Example01RotateSecretWithLambdaStack/secretLambda/InvokeServicePrincipal(secretsmanager.amazonaws.com)": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "secretLambdaInvokeServicePrincipalsecretsmanageramazonawscom7D9A46DD"
+          }
+        ],
+        "/Example01RotateSecretWithLambdaStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/Example01RotateSecretWithLambdaStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/Example01RotateSecretWithLambdaStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/Example01RotateSecretWithLambdaStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "Example01RotateSecretWithLambdaStack"
+    }
+  }
+}
